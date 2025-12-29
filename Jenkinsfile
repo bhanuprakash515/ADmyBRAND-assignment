@@ -5,9 +5,9 @@ pipeline {
         nodejs "node18"
     }
 
-    options {
-    timeout(time: 2, unit: 'MINUTES')
-    }
+    // options {
+    // timeout(time: 2, unit: 'MINUTES')
+    // }
 
     stages {
         stage('CheckOut Code') {
