@@ -35,7 +35,7 @@ pipeline {
         stage('Vunerrability Check ') {
             steps {
                 sh '''
-                echo "🔍 Running npm audit (high & critical only)"
+                echo " Running npm audit (high & critical only)"
                 npm audit --audit-level=high || true
                 '''
             }
@@ -43,7 +43,7 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                sh 'npm run dev || true'
+                sh 'npm run build'
             }
         }
 
