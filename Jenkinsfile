@@ -28,6 +28,15 @@ pipeline {
             }
         }
 
+        stage('Vunerrability Check') {
+            steps {
+                sh '''
+                echo "Running npm audit (high & critical only)"
+                npm audit
+                '''
+            }
+        }
+
         stage('Build Application') {
             steps {
                 sh 'npm run build'
