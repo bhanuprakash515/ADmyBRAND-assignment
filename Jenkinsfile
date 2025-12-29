@@ -18,7 +18,8 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stages('Check Node and npm Version') {
+
+        stage ('Check Node and npm Version') {
             steps {
                 sh '''
                 node -v
@@ -35,10 +36,10 @@ pipeline {
     }
     post {
         success {
-            echo '✅ Build pipeline completed successfully'
+            echo ' Build pipeline completed successfully'
         }
         failure {
-            echo '❌ Build pipeline failed'
+            echo ' Build pipeline failed'
         }
     }
 
