@@ -28,10 +28,7 @@ pipeline {
             }
         }
 
-        stage('Build with Timeout') {
-            options {
-            timeout(time: 2, unit: 'MINUTES')
-            }
+        stage('Run Code') {
             steps {
                 sh 'npm run build'
             }
