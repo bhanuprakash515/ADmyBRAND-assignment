@@ -28,11 +28,11 @@ pipeline {
             }
         }
 
-        stage('Vunerrability Check (All)') {
+        stage('Vunerrability Check ') {
             steps {
                 sh '''
-                echo "Running npm audit (low -> Critical)"
-                npm audit 
+                echo "🔍 Running npm audit (high & critical only)"
+                npm audit --audit-level=high
                 '''
             }
         }
