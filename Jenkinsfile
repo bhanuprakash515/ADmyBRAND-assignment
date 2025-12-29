@@ -1,6 +1,37 @@
 pipeline {
     agent any
+
     tools {
         nodejs "node18"
     }
+
+    stages {
+        stage('CheckOut Code') {
+            steps{
+                git branch: 'main',
+                url: 'https://github.com/bhanuprakash515/ADmyBRAND-assignment.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Build Application') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+    }
+    post {
+        success {
+            echo '✅ Build pipeline completed successfully'
+        }
+        failure {
+            echo '❌ Build pipeline failed'
+        }
+    }
+
 }
