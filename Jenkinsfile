@@ -32,7 +32,7 @@ pipeline {
             steps {
                 sh '''
                 echo "Running npm audit (high & critical only)"
-                npm audit
+                npm audit report
                 '''
             }
         }
