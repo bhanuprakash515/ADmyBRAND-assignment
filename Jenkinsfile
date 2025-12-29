@@ -4,6 +4,10 @@ pipeline {
     tools {
         nodejs "node18"
     }
+    
+    options {
+        timeout(time: 2, unit: 'MINUTES')
+    }
 
     stages {
         stage('CheckOut Code') {
@@ -28,11 +32,15 @@ pipeline {
             }
         }
 
-        stage('Build Application') {
+        stage('Build with Timeout') {
+            options {
+            timeout(time: 2, unit: 'MINUTES')
+            }
             steps {
-                sh 'npm run dev'
+                sh 'npm run build'
             }
         }
+
     }
     post {
         success {
