@@ -18,6 +18,14 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stages('Check Node and npm Version') {
+            steps {
+                sh '''
+                node -v
+                npm -v
+                '''
+            }
+        }
 
         stage('Build Application') {
             steps {
