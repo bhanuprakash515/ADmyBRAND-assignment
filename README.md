@@ -147,3 +147,74 @@ Manage Jenkins → Tools → NodeJS
  <img width="1846" height="478" alt="image" src="https://github.com/user-attachments/assets/ed053838-aa54-437e-ba47-66655e32e69d" />
 
 
+##🔹 Part 3: Manual Deploynment on AWS EC2 Instance on free Tier
+
+1️⃣ Create EC2 Instance
+
+Region: ap-south-1 (Mumbai)
+
+AMI: Ubuntu 22.04 LTS
+
+Instance Type: t2.micro (Free Tier)
+
+Security Group:
+
+SSH (22) → My IP
+
+HTTP (80) → 0.0.0.0/0
+
+<img width="841" height="181" alt="image" src="https://github.com/user-attachments/assets/dc88aa21-e6f2-4647-b994-45641be105e0" />
+
+### 🔐 Connect to EC2 using Mobaxterm using pem file and the default name is ubuntu
+### 🌐 Install & Configure Nginx
+sudo apt update
+
+sudo apt install nginx -y
+
+sudo systemctl start nginx
+
+sudo systemctl enable nginx
+
+Verify in browser:
+
+http://<EC2_PUBLIC_IP>
+
+📂 Prepare Deployment Directory
+sudo rm -rf /var/www/html/*
+sudo chown -R ubuntu:ubuntu /var/www/html
+
+### 📦 Deploy Next.js Application (Manual)
+
+Clone the Reop using Git clone on Ec2 Server 
+
+git clone (https://github.com/bhanuprakash515/ADmyBRAND-assignment.git)
+
+cd ADmyBRAND-assignment
+
+<img width="908" height="165" alt="image" src="https://github.com/user-attachments/assets/872670e1-c10c-42a7-bdcc-23d5909f9a65" />
+
+Install the Dependencies and Build the Application using **npm run build**
+
+** ⚙️ Install PM2 on EC2
+
+sudo npm install -g pm2
+
+<img width="683" height="567" alt="image" src="https://github.com/user-attachments/assets/e316e5ce-684e-4d67-86e7-acf9d25cd74a" />
+
+## NOTE;- Pm2 is in **running state**
+
+If the app is running 
+
+### Configure the nginx to the listen on AWS public IP
+
+<img width="726" height="650" alt="image" src="https://github.com/user-attachments/assets/f64cc6a3-80bd-4e11-990f-9582cc09e451" />
+
+## After Configure Restart Nginx
+
+<img width="643" height="434" alt="image" src="https://github.com/user-attachments/assets/1874000d-078f-4fdf-8071-d57a500c444c" />
+
+
+# Project Output:-
+
+<img width="1919" height="1037" alt="image" src="https://github.com/user-attachments/assets/5e482f78-928d-4bd2-81da-4b2a668f899e" />
+
