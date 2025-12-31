@@ -3,6 +3,20 @@
 ## 📌 Project Overview
 ### This project demonstrates an end-to-end CI pipeline and manual deployment workflow for a Next.js frontend application using Jenkins, AWS EC2, Nginx, and PM2.
 
+## 🏗️ Architecture Flow
+Local Development
+        ↓
+GitHub Repository
+        ↓
+Jenkins CI Pipeline
+        ↓
+Production Build (npm run build)
+        ↓
+Manual Deployment
+        ↓
+AWS EC2 (Nginx + PM2)
+
+
 
 ### 🚀 Features od Application
 🎯 Hero Section with gradient text and responsive layout.
@@ -80,26 +94,56 @@ Expose the application on port 80
 
 🔹 PM2
 
-PM2 is a production-grade Node.js process manager used to:
+### PM2 is a production-grade Node.js process manager used to: Keep the app running in the background Restart the app automatically if it crashes. Manage logs and application status
 
-Keep the app running in the background
-
-Restart the app automatically if it crashes
-
-Manage logs and application status
-
-🖥️ Local Development Setup
+### Part1:- 🖥️ Local Development Setup
 1️⃣ Clone the Repository
-git clone <your-repo-url>
-cd <project-folder>
+git clone (https://github.com/bhanuprakash515/ADmyBRAND-assignment.git)
+cd ADmyBRAND-assignment
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 npm install
 
-3️⃣ Run in Development Mode
+### 3️⃣ Run in Development Mode
 npm run dev
 
+### 🏗️ Production Build (Important)
+npm run build
+Creates a production-optimized build
 
-Used only for local development (hot reload, debugging)
+Performs strict checks (imports, CSS paths, envs)
+
+Used in Jenkins and production
+
+### 🔄 Jenkins CI Pipeline (Manual Trigger)
+Pipeline Stages
+
+Checkout Code
+
+Install Dependencies
+
+Vulnerability Scan (npm audit)
+
+Production Build (npm run build)
+
+<img width="715" height="173" alt="image" src="https://github.com/user-attachments/assets/6ac5a766-bc03-47e7-8eb3-baa508608884" />
+
+##🔹 Part 2: Jenkins CI Pipeline Setup
+
+### 1️⃣ Jenkins Tools Configuration
+
+Install NodeJS plugin
+
+Configure Node.js 18.x in:
+
+Manage Jenkins → Tools → NodeJS
+
+ ## Build PipeLine
+ 
+ The Jenkinsfile configured in repo
+ 
+ Output:-
+ 
+ <img width="1846" height="478" alt="image" src="https://github.com/user-attachments/assets/ed053838-aa54-437e-ba47-66655e32e69d" />
 
 
