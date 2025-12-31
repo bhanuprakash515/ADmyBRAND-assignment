@@ -14,3 +14,15 @@ A sleek, responsive AI-powered marketing platform UI built with Next.js 14, Tail
 📞 **Footer with navigation links**
 
 
+This project demonstrates an end-to-end CI pipeline and manual deployment workflow for a Next.js frontend application using Jenkins, AWS EC2, Nginx, and PM2.
+
+⚠️ Note: Continuous Deployment (CD) is intentionally not enabled for security reasons. Deployment is triggered manually after successful CI.
+
+## **🧱 Tech Stack**
+Frontend: Next.js
+CI Tool: Jenkins
+Cloud: AWS EC2 (Ubuntu 22.04 – ap-south-1)
+Web Server: Nginx
+Process Manager: PM2
+Security: npm audit
+OS: Linux (Ubuntu)
