@@ -1,4 +1,4 @@
-# 🚀 **Next.js CI Pipeline & Manual Deployment on AWS EC2 (Jenkins + Nginx)**
+🚀 **Next.js CI Pipeline & Manual Deployment on AWS EC2 (Jenkins + Nginx)**
 
 ADmyBRAND AI Marketing Suite 🧠✨
 A sleek, responsive AI-powered marketing platform UI built with Next.js 14, Tailwind CSS, and shadcn/ui. This frontend showcases features like campaign generation, analytics, ad copy creation, pricing plans, testimonials, and more.
@@ -12,4 +12,5 @@ A sleek, responsive AI-powered marketing platform UI built with Next.js 14, Tail
 💬 FAQ section with Accordion
 ⭐ Testimonials
 📞 **Footer with navigation links**
+
 
