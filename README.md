@@ -55,4 +55,51 @@ npm audit – Dependency vulnerability scanning
 
 **PM2** – Process manager for Node.js apps
 
+🧠 Key Concepts (Definitions)
+🔹 Jenkins
+
+Jenkins is a CI tool used to automate:
+
+Code checkout
+
+Dependency installation
+
+Security scanning
+
+Production builds
+
+🔹 Nginx
+
+Nginx is a high-performance web server used to:
+
+Serve static files
+
+Act as a reverse proxy
+
+Expose the application on port 80
+
+🔹 PM2
+
+PM2 is a production-grade Node.js process manager used to:
+
+Keep the app running in the background
+
+Restart the app automatically if it crashes
+
+Manage logs and application status
+
+🖥️ Local Development Setup
+1️⃣ Clone the Repository
+git clone <your-repo-url>
+cd <project-folder>
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run in Development Mode
+npm run dev
+
+
+Used only for local development (hot reload, debugging)
+
 
